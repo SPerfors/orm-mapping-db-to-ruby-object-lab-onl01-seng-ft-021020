@@ -96,10 +96,10 @@ class Student
     end
   end
   
-  def self.first_X_students_in_grade_10(id)
+  def self.first_X_students_in_grade_10(name)
     sql = <<-SQL 
       SELECT * FROM students 
-      WHERE id = ?
+      WHERE name = ?
     SQL
     DB[:conn].execute(sql, id).map do |row|
       self.new_from_db(row)
