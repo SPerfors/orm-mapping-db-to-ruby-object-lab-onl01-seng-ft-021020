@@ -101,7 +101,7 @@ class Student
       SELECT * FROM students 
       WHERE name = ?
     SQL
-    DB[:conn].execute(sql, id).map do |row|
+    DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
     end
   end
